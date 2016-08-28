@@ -9,6 +9,10 @@
   padding-top: 100px;
 }
 
+.topBar {
+    position: relative;
+}
+
 :global .row--fullWidth {
     max-width: 100%;
 }
