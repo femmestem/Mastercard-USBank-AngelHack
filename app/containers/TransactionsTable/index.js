@@ -2,10 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './styles.css';
 
+const mapIdsToNames = {
+  '00000': 'H & M Feed',
+  '06598': 'Sandra\'s Fertilizer',
+  '06549': 'OfficeMax',
+  '06579': 'Arco Gas',
+  '06532': 'MineralCo',
+  '06500': 'Ace Hardware',
+  '06542': 'Farm Supplies International',
+  '06509': 'Hibbert Lumber',
+};
+
 const dummyTransactions = [
   {
     "TransactionPostDate": "2012-10-09",
-    "TransactionAmount": "50.8",
+    "TransactionAmount": "50.80",
     "TransactionType": "Debit",
     "TransactionCode": "600",
     "SICMCCCode": "05691",
@@ -23,7 +34,7 @@ const dummyTransactions = [
   },
   {
     "TransactionPostDate": "2012-10-09",
-    "TransactionAmount": "26.2",
+    "TransactionAmount": "26.20",
     "TransactionType": "Debit",
     "TransactionCode": "600",
     "SICMCCCode": "05441",
@@ -32,7 +43,7 @@ const dummyTransactions = [
   },
   {
     "TransactionPostDate": "2012-10-09",
-    "TransactionAmount": "16.8",
+    "TransactionAmount": "16.80",
     "TransactionType": "Debit",
     "TransactionCode": "600",
     "SICMCCCode": "05949",
@@ -68,7 +79,7 @@ const dummyTransactions = [
   },
   {
     "TransactionPostDate": "2012-09-28",
-    "TransactionAmount": "13.2",
+    "TransactionAmount": "13.20",
     "TransactionType": "Debit",
     "TransactionCode": "600",
     "SICMCCCode": "05310",
@@ -104,7 +115,7 @@ const dummyTransactions = [
   },
   {
     "TransactionPostDate": "2012-09-24",
-    "TransactionAmount": "40.0",
+    "TransactionAmount": "40.00",
     "TransactionType": "Debit",
     "TransactionCode": "600",
     "SICMCCCode": "05722",
@@ -185,7 +196,7 @@ const dummyTransactions = [
   },
   {
     "TransactionPostDate": "2012-09-17",
-    "TransactionAmount": "13.4",
+    "TransactionAmount": "13.40",
     "TransactionType": "Debit",
     "TransactionCode": "600",
     "SICMCCCode": "05411",
@@ -199,20 +210,20 @@ class TransactionsTable extends Component { // eslint-disable-line react/prefer-
     return (
       <table>
         <thead>
-        <tr>
-          <th>Date</th>
-          <th>Merchant</th>
-          <th>Amount</th>
-        </tr>
+          <tr>
+            <th className={ styles.date }>Date</th>
+            <th className={ styles.merchant }>Merchant</th>
+            <th className={ styles.amount }>Amount</th>
+          </tr>
         </thead>
         <tbody>
-        { /* this.props.TransactionData */ dummyTransactions.map((trx, i) => (
-          <tr key={ i }>
-            <td>{ trx.TransactionPostDate }</td>
-            <td>{ trx.MerchantNumber }</td>
-            <td>{ (trx.TransactionType === 'Debit' ? '' : '–') + trx.TransactionAmount }</td>
-          </tr>
-        )) }
+          { /* this.props.TransactionData */ dummyTransactions.map((trx, i) => (
+            <tr key={ i }>
+              <td>{ trx.TransactionPostDate }</td>
+              <td>{ mapIdsToNames[trx.MerchantNumber] || trx.MerchantNumber }</td>
+              <td className={ styles.currency }>{ (trx.TransactionType === 'Debit' ? '–$' : '$') + trx.TransactionAmount }</td>
+            </tr>
+          )) }
         </tbody>
       </table>
     );
