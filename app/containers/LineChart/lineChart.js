@@ -5,7 +5,7 @@ import lineCalculations from './lineCalculations';
 class LineChart extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     const genData = lineCalculations.genData();
-    let data = genData || [
+    let stockData = [
       { x: 0, y: 0 },
       { x: 1, y: 3 },
       { x: 2, y: 2 },
@@ -13,23 +13,30 @@ class LineChart extends Component { // eslint-disable-line react/prefer-stateles
       { x: 4, y: 3 },
       { x: 5, y: 5 },
     ];
+    let data = genData || stockData
+    //let pastData = lineCalculations.genData(true);
     return (
       <div>
-        <VictoryChart>
+        <VictoryChart
+          height={200}
+          width={400}
+        >
           <VictoryAxis
-            domain={[-10, 10]}
             crossAxis
             standalone={false}
+            scale="time"
           />
           <VictoryAxis
             dependentAxis
-            domain={[-100, 100]}
+            domain={[-1500, 1500]}
             crossAxis
             standalone={false}
           />
           <VictoryLine
+          label="current"
             data={data}
           />
+          
         </VictoryChart>
       </div>
     );
@@ -38,3 +45,12 @@ class LineChart extends Component { // eslint-disable-line react/prefer-stateles
 
 
 export default LineChart;
+
+/*<VictoryLine
+            label="past"
+            style={{data:
+              {stroke: "blue"}
+            }}
+            data={pastData}
+          />
+*/
