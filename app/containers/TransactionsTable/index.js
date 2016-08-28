@@ -198,11 +198,14 @@ class TransactionsTable extends Component { // eslint-disable-line react/prefer-
   render() {
     return (
       <table>
+        <thead>
         <tr>
           <th>Date</th>
           <th>Merchant</th>
           <th>Amount</th>
         </tr>
+        </thead>
+        <tbody>
         { /* this.props.TransactionData */ dummyTransactions.map((trx, i) => (
           <tr key={ i }>
             <td>{ trx.TransactionPostDate }</td>
@@ -210,6 +213,7 @@ class TransactionsTable extends Component { // eslint-disable-line react/prefer-
             <td>{ (trx.TransactionType === 'Debit' ? '' : '–') + trx.TransactionAmount }</td>
           </tr>
         )) }
+        </tbody>
       </table>
     );
   }
