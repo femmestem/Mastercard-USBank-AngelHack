@@ -17,6 +17,7 @@ import styles from './styles.css';
 
 import NavBar from './components/NavBar';
 import Links from './components/Links';
+import Advert from './components/Advert';
 
 export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -30,7 +31,10 @@ export default class App extends React.Component { // eslint-disable-line react/
                 <NavBar />
                 <div className={`row`}>
                     <div className={`columns small-12 ${styles.container}`}>
-                        <Links />
+                        <div className={`row align-justify ${styles.topBar}`}>
+                            <Links />
+                            <Advert />
+                        </div>
                         {React.Children.toArray(this.props.children)}
                     </div>
                 </div>

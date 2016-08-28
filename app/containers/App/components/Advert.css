@@ -1,0 +1,28 @@
+.advert {
+    background-color: #FFFEE5;
+    border: 1px solid #FFDEA7;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    transform: translateY(-0%);
+}
+
+.advert .crossmark {
+    position: absolute;
+    right: 2px;
+    top: -2px;
+    cursor: pointer;
+    color: #e29f30;
+    font-size: 10px;
+}
+
+.advert p {
+    margin-bottom: 0;
+    color: #e29f30;
+    font-size: 12px;
+}
+
+.advert a {
+    font-size: 12px;
+}
