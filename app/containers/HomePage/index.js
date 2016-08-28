@@ -18,11 +18,20 @@ export default class HomePage extends React.Component { // eslint-disable-line r
 
   render() {
     return (
-      <div>
-        <h1>
-          <FormattedMessage {...messages.header} />
-        </h1>
-        <TransactionsTable />
+      <div className={`row`}>
+
+        <div className={`column small-12`}>
+            <h1>
+                <FormattedMessage {...messages.header} />
+            </h1>
+
+            <div className={`row align-center`}>
+                <div className={`column small-10`}>
+                    <TransactionsTable />
+                </div>
+            </div>
+        </div>
+
       </div>
     );
   }
