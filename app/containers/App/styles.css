@@ -6,4 +6,20 @@
 
 .container {
   display: block;
+  padding-top: 100px;
+}
+
+:global .row--fullWidth {
+    max-width: 100%;
+}
+
+:global .row.row--fullWidth > .row,
+:global .row.row--fullWidth .row  {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    font-family: "Helvetica";
 }
