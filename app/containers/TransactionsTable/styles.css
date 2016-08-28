@@ -1,12 +1,29 @@
 table {
   border-collapse: collapse;
 }
+thead tr {
+  background-color: #CCC;
+}
 th {
   text-align: left;
   padding: 10px;
-  border: solid 1px #ccc;
+  border: solid 1px #aaa;
 }
+.date {
+  width: 150px;
+}
+.merchant {
+  width: 350px;
+}
+.amount {
+  width: 100px;
+}
+
 td {
   padding: 10px;
   border: solid 1px #ccc;
+}
+
+.currency {
+  text-align: right;
 }
