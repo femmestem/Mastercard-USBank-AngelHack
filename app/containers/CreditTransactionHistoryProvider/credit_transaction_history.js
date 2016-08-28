@@ -625,4 +625,4 @@ const initialState = [
     }
 ]
 
-exports default initialState
+export default initialState

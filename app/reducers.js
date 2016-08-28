@@ -7,7 +7,7 @@ import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
-import creditTransactionHistoryReducer from 'containers/CreditTransactionHistoryReducer/reducer';
+import creditTransactionHistoryReducer from 'containers/CreditTransactionHistoryProvider/reducer';
 
 /*
  * routeReducer

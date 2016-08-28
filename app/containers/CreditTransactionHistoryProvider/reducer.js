@@ -73,3 +73,5 @@ function creditTransactionHistoryReducer(state = _initialState, action) {
       return state;
   }
 }
+
+export default creditTransactionHistoryReducer
