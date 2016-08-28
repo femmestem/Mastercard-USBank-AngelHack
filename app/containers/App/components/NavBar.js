@@ -16,7 +16,7 @@ const NavBar = (props) => {
                         </Link>
                     </div>
                     <div className={`column shrink ${styles.user}`}>
-                        Jo Doe <span>Logout</span>
+                        Tom Jones <span>Logout</span>
                     </div>
                 </div>
             </div>
