@@ -1,4 +1,6 @@
 import React from 'react';
+import pieGraph from './pie-graph.png';
+
 import styles from './styles.css';
 
 const TransactionsHeader = (props) => {
@@ -6,7 +8,7 @@ const TransactionsHeader = (props) => {
         <div className={`row ${styles.container}`}>
             <div className={`column small-8`}>
                 <h2>Spending by Category</h2>
-                {/* Pie Chart */}
+                <img src={pieGraph} />
             </div>
 
             <div className={`column small-4 text-left`}>
@@ -21,7 +23,7 @@ const TransactionsHeader = (props) => {
 
                 <h3>Actual</h3>
                 <span className={`money`}>
-                    <span>$</span>3000
+                    <span>$</span>2467
                 </span>
             </div>
         </div>
