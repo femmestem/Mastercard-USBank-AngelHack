@@ -29,19 +29,23 @@ const ads = [
 export default class Forecast extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
-        <div>
+      <div className={styles.container}>
           <div className={ styles.float60 }>
             <img src={ projectionGrowth } alt="Projected cash"/>
           </div>
           <div className={ styles.float40 }>
-            <div className={ styles.float60 }><select name="month" id="month-select">
-              <option value="next-month">Next Month</option>
-            </select>
-            <h5 className={ styles.currencyHeader }>EARNING</h5>
-            <p className={ styles.currency }>$1050</p>
-            <h5 className={ styles.currencyHeader }>SPENDING</h5>
-            <p className={ styles.currency }>$910</p></div>
+            <div className={ styles.float60 }>
+                <select name="month" id="month-select">
+                  <option value="next-month">Next Month</option>
+                </select>
+                <h3>Earning</h3>
+                <span className={`money`}>
+                    <span>$</span>1050
+                </span>
+                <h3>Spending</h3>
+                <span className={`money`}>
+                    <span>$</span>910
+                </span>
           </div>
         </div>
         <h4 className={ styles.recommendations }>Recommendations</h4>

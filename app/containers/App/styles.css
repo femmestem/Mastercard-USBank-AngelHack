@@ -28,3 +28,31 @@ body {
     font-family: "Helvetica";
     color: #555;
 }
+
+h2 {
+    font-size: 30px;
+    color: #21598D;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 30px;
+    color: #3276A9;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+:global .money {
+    font-size: 54px;
+    color: #9B9B9B;
+    font-weight: lighter;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    display: block;
+}
+
+:global .money > span {
+    color: #CCCCCC;
+    font-size: 30px;
+}

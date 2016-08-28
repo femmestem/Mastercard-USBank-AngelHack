@@ -1,3 +1,7 @@
+.container {
+    margin-top: 50px;
+}
+
 .recommendations {
   color: rgb(50, 118, 169);
   background-color: #ddd;
