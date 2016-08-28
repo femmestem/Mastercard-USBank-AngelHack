@@ -3,10 +3,8 @@
 }
 
 .recommendations {
-  color: rgb(50, 118, 169);
-  background-color: #ddd;
-  padding: 5px 15px;
-  border-bottom: 1px solid darkblue;
+    color: #585858;
+    padding: 5px 0;
 }
 
 .float60 {
