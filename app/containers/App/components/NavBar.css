@@ -1,0 +1,23 @@
+.navbar {
+   background-image: linear-gradient(#F7F7F7 0%, #CBCBCA 100%);
+   padding: 0.9375rem 0;
+   position: fixed;
+   top:0;
+   width: 100%;
+   z-index: 2;
+}
+
+.logo {
+    height: 33px;
+}
+
+.user {
+    color: #3276A9;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user span {
+    font-weight: normal;
+    margin-left: 15px;
+}
