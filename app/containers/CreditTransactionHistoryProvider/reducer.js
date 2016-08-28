@@ -5,13 +5,14 @@ import {
 
 const periodMonths = 3;
 
-var currentMonthTrxns = initialState[0].CCTranHistoryResponseData.TransactionDetails.TransactionData;
+var mtdTrxns = initialState[0].CCTranHistoryResponseData.TransactionDetails.TransactionData;
 var periodTrxns = [];
 
-for (i=0,l=periodMonths, i++) {
+for (var i=0,l=periodMonths; i < l; i++) {
     periodTrxns.push(initialState[i].CCTranHistoryResponseData.TransactionDetails.TransactionData);
 }
 
+// Note to Self: parse TransactionAmount as int
 function calcCenterMovingAvg(arr) {
     var ctrMvAvg;
     return ctrMvAvg;
@@ -38,25 +39,25 @@ function getMtd(arr, ...trxnType) {
 }
 
 // _initialState is a mutated copy of the imported initialState
-const _initialState = Object.assign({}, initialState,
-            { transactions: action.transactions,
-              // actualEarning: getMtd(currentMonthTrxns, ["credit"]),
-              // actualSpending: getMtd(currentMonthTrxns, ["debit"]),
+const _initialState = {
+              currentMonthTrxns: mtdTrxns,
+              // actualEarning: getMtd(mtdTrxns, ["credit"]),
+              // actualSpending: getMtd(mtdTrxns, ["debit"]),
               // forecastEarning: calcForecast(periodTrxns, ["debit"]),
               // forecastSpending: calcForecast(periodTrxns, ["credit"])
               actualEarning: 8000.0,
               actualSpending: 10000.0,
               forecastEarning: 9000.0,
-              forecastSpending: 8800.0
-            }
-        );
+              forecastSpending: 8800.0,
+              API_RESPONSES: initialState
+            };
 
 function creditTransactionHistoryReducer(state = _initialState, action) {
   switch (action.type) {
     case SET_CREDIT_TRANSACTION_HISTORY:
 
         return Object.assign({}, state,
-            { transactions: action.transactions,
+            { currentMonthTrxns: action.currentMonthTrxns,
               // actualEarning: getMTD(currentMonthTrxns, ["credit"]),
               // actualSpending: getMTD(currentMonthTrxns, ["debit"]),
               // forecastEarning: calcForecast(periodTrxns, ["debit"]),
@@ -64,10 +65,10 @@ function creditTransactionHistoryReducer(state = _initialState, action) {
               actualEarning: 8000.0,
               actualSpending: 10000.0,
               forecastEarning: 9000.0,
-              forecastSpending: 8800.0
+              forecastSpending: 8800.0,
+              API_RESPONSES: [...state.API_RESPONSES, action.API_RESPONSE]
             }
         );
-
     default:
       return state;
   }

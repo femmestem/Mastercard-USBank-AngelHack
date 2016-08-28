@@ -1,11 +1,13 @@
 import {
-  // array of 3 objects returned from API call
   SET_CREDIT_TRANSACTION_HISTORY,
 } from './constants';
 
-export function setCreditTransactionHistory(arrOfTrxnStatements) {
+export function setCreditTransactionHistory(API_RESPONSE) {
+    const CurrentMonthTrxns = API_RESPONSE.CCTranHistoryResponseData.TransactionDetails.TransactionData;
+
   return {
     type: SET_CREDIT_TRANSACTION_HISTORY,
-    transactions: arrOfTrxnStatements
+    currentMonthTrxns: CurrentMonthTrxns,
+    API_RESPONSE: API_RESPONSE
   };
 }
