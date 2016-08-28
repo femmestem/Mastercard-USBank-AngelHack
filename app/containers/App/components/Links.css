@@ -1,0 +1,27 @@
+.links {
+    list-style-type: none;
+}
+
+.links .link {
+    position: relative;
+}
+
+.links .link a {
+    color: #3276A9;
+    font-size: 24px;
+}
+
+.links .link a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-bottom: 2px solid rgba(50, 118, 169, 0.5);
+    width: 65%;
+    transform: translateX(-50%)scaleX(0);
+    transition: transform 0.25s ease-out;
+}
+
+.links .link a.active:after {
+    transform: translateX(-50%)scaleX(1);
+}
